@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>555 Sona Becho</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#101820;color:white}
+header{background:#17232d;padding:25px 18px;text-align:center}
+header h1{color:#f5c65b;font-size:29px;margin:8px 0}
+header p{color:#ddd}
+section{padding:18px}
+.card{background:#1c2a35;padding:20px;border-radius:15px;margin-bottom:16px}
+h2{color:#f5c65b;margin-top:0}
+p{line-height:1.6;color:#ddd}
+.btn{display:block;text-align:center;background:#e6b94f;color:#111;
+padding:14px;border-radius:9px;text-decoration:none;font-weight:bold;margin-top:12px}
+.whatsapp{background:#20c767;color:white}
+input,select{width:100%;padding:13px;margin:8px 0;
+border-radius:8px;border:1px solid #777;font-size:16px}
+.result{color:#f5c65b;font-size:20px;font-weight:bold}
+footer{text-align:center;padding:25px;color:#aaa}
+</style>
+</head>
+<body>
+
+<header>
+<h1>555 Sona Becho</h1>
+<p>सोने की सही कीमत जानें, आसानी से बेचें</p>
+<a class="btn whatsapp" href="https://wa.me/919160076555">WhatsApp पर संपर्क करें</a>
+</header>
+
+<section>
+<div class="card">
+<h2>आज का सोने का भाव</h2>
+<p>आज का ताजा गोल्ड रेट जानने के लिए हमसे संपर्क करें।</p>
+<a class="btn" href="tel:9160076555">रेट जानने के लिए कॉल करें</a>
+</div>
+
+<div class="card">
+<h2>सोने की कीमत लगवाएं</h2>
+<p>अपने सोने का वजन और रेट डालकर अनुमानित कीमत जानें।</p>
+
+<label>सोने का वजन (ग्राम)</label>
+<input type="number" id="weight" placeholder="जैसे 10">
+
+<label>सोने की शुद्धता</label>
+<select id="purity">
+<option value="24">24 कैरेट</option>
+<option value="22" selected>22 कैरेट</option>
+<option value="20">20 कैरेट</option>
+<option value="18">18 कैरेट</option>
+<option value="14">14 कैरेट</option>
+</select>
+
+<label>24 कैरेट का रेट प्रति ग्राम (₹)</label>
+<input type="number" id="rate" placeholder="आज का रेट डालें">
+
+<button class="btn" onclick="calculate()">कीमत निकालें</button>
+<p class="result" id="result"></p>
+<p>यह केवल अनुमान है। अंतिम कीमत सोने की जांच के बाद तय होगी।</p>
+</div>
+
+<div class="card">
+<h2>घर बैठे सोना बेचें</h2>
+<p>अब घर बैठे भी सोना बेचने की सुविधा उपलब्ध है। आपकी निजता का पूरा ध्यान रखा जाएगा।</p>
+<a class="btn whatsapp" href="https://wa.me/919160076555?text=मुझे%20घर%20से%20सोना%20बेचना%20है">Home Service बुक करें</a>
+</div>
+
+<div class="card">
+<h2>बैंक में गिरवी गहने छुड़वाएं</h2>
+<p>बैंकों में गिरवी रखे गहने छुड़वाने के बाद खरीदने की सुविधा के बारे में जानकारी लें।</p>
+<a class="btn whatsapp" href="https://wa.me/919160076555?text=मुझे%20बैंक%20में%20गिरवी%20गहनों%20के%20बारे%20में%20जानकारी%20चाहिए">जानकारी के लिए WhatsApp करें</a>
+</div>
+
+<div class="card">
+<h2>हमारी सुविधाएं</h2>
+<p>✓ मशीन से सोने की जांच</p>
+<p>✓ तुरंत कैश / ऑनलाइन ट्रांसफर</p>
+<p>✓ घर से सोना खरीदने की सुविधा</p>
+<p>✓ बैंक में गिरवी गहनों के लिए सहायता</p>
+<p>✓ आपकी निजता का पूरा ध्यान</p>
+</div>
+
+<div class="card">
+<h2>हमारी दुकान</h2>
+<p>Main Chikkara Chowk, Bank Wali Gali, Jhajjar, Haryana</p>
+<a class="btn" target="_blank" href="https://www.google.com/maps/search/?api=1&query=Main+Chikkara+Chowk+Bank+Wali+Gali+Jhajjar+Haryana">Google Map पर रास्ता देखें</a>
+</div>
+
+<div class="card">
+<h2>संपर्क करें</h2>
+<p>फोन: 916-0076-555</p>
+<a class="btn whatsapp" href="https://wa.me/919160076555">WhatsApp करें</a>
+<a class="btn" href="tel:9160076555">अभी कॉल करें</a>
+</div>
+</section>
+
+<footer>
+555 Sona Becho<br>
+आपका भरोसा, हमारी पहचान।
+</footer>
+
+<script>
+function calculate(){
+let w=Number(document.getElementById('weight').value);
+let p=Number(document.getElementById('purity').value);
+let r=Number(document.getElementById('rate').value);
+if(w<=0 || r<=0){
+document.getElementById('result').innerText="कृपया सही वजन और रेट डालें।";
+return;
+}
+let total=w*r*p/24;
+document.getElementById('result').innerText=
+"अनुमानित कीमत: ₹"+total.toLocaleString('en-IN',{maximumFractionDigits:2});
+}
+</script>
+</body>
+</html>
